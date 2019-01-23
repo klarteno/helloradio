@@ -248,7 +248,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -256,6 +256,24 @@
                 <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/helloradio-impl/src/main/resources/application.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="988">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="798">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -302,6 +320,7 @@
         <option value="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioEntity.scala" />
         <option value="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioServiceImpl.scala" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -416,6 +435,14 @@
               <item name="helloradio-impl" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="helloradio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="helloradio" type="462c0819:PsiDirectoryNode" />
+              <item name="helloradio-impl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="helloradio" type="b2602c69:ProjectViewProjectNode" />
@@ -551,18 +578,18 @@
       <option name="presentableId" value="Default" />
       <updated>1548231122418</updated>
       <workItem from="1548231126514" duration="2759000" />
-      <workItem from="1548234634550" duration="21608000" />
+      <workItem from="1548234634550" duration="22874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24367000" />
+    <option name="totallyTimeSpent" value="25633000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1107" y="-12" width="2733" height="2076" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.030534351" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.41625708" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
@@ -664,6 +691,20 @@
             <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helloradio-impl/src/main/resources/application.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>

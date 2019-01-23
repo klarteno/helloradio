@@ -1,7 +1,21 @@
+
+target
+ideatarget
+.target
+bin
+.cache
+.cache-main
+.cache-tests
+.classpath
+.project
+.tmpBin
+.factorypath
+.settings
+logs
+
+
 *.class
 *.log
-helloradio-api/target/
-helloradio-impl/target/
 
 *.iml
 .idea
