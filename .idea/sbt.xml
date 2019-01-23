@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaSbtSettings">
+    <option name="customLauncherEnabled" value="true" />
+    <option name="customLauncherPath" value="$PROJECT_DIR$/../../lagom-scala-sbt/sbt" />
+    <option name="customVMEnabled" value="true" />
+    <option name="customVMPath" value="/usr/lib/jvm/java-8-oracle" />
+    <option name="linkedExternalProjectsSettings">
+      <SbtProjectSettings>
+        <option name="allowSbtVersionOverride" value="false" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="useAutoImport" value="true" />
+        <option name="useSbtShellForBuild" value="true" />
+        <option name="useSbtShellForImport" value="true" />
+      </SbtProjectSettings>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,10 @@
+[0m[[0m[31merror[0m] [0m[0m/home/androgo/Documents/IdeaProjects/githubradio/helloradio/helloradio-api/src/main/scala/com/iqa/helloradio/api/HelloradioService.scala:28:31: illegal character '\u201c'[0m
+[0m[[0m[31merror[0m] [0m[0m        restCall(Method.POST, “/api/add-radio/:id”, addRadioItem _)[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/androgo/Documents/IdeaProjects/githubradio/helloradio/helloradio-api/src/main/scala/com/iqa/helloradio/api/HelloradioService.scala:28:50: illegal character '\u201d'[0m
+[0m[[0m[31merror[0m] [0m[0m        restCall(Method.POST, “/api/add-radio/:id”, addRadioItem _)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/androgo/Documents/IdeaProjects/githubradio/helloradio/helloradio-api/src/main/scala/com/iqa/helloradio/api/HelloradioService.scala:34:3: ')' expected but '}' found.[0m
+[0m[[0m[31merror[0m] [0m[0m  }[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
