@@ -38,50 +38,55 @@ class HelloradioEntity extends PersistentEntity {
   /**
     * The initial state. This is used if there is no snapshotted state to be found.
     */
-  override def initialState: HelloradioState = HelloradioState("Hello",List.empty, LocalDateTime.now.toString)
+  override def initialState: HelloradioState = HelloradioState("",List.empty)
 
   /**
     * An entity can define different behaviours for different states, so the behaviour
     * is a function of the current state to a set of actions.
     */
   override def behavior: Behavior = {
-    case HelloradioState(message, _) => Actions().onCommand[UseGreetingMessage, Done] {
-
-      // Command handler for the UseGreetingMessage command
-      case (UseGreetingMessage(newMessage), ctx, state) =>
-        // In response to this command, we want to first persist it as a
-        // GreetingMessageChanged event
-        ctx.thenPersist(
-          GreetingMessageChanged(newMessage)
+    case HelloradioState(alias , locations) => Actions()
+      .onCommand[AddRadioProfileCommand, Done] {
+      case (AddRadioProfileCommand(alias,location), context, state) =>
+        context.thenPersist(
+          AddedRadioProfileEvent(alias,location)
         ) { _ =>
-          // Then once the event is successfully persisted, we respond with done.
-          ctx.reply(Done)
+          context.reply(Done)
         }
-
-    }.onReadOnlyCommand[Hello, String] {
-
-      // Command handler for the Hello command
-      case (Hello(name), ctx, state) =>
-        // Reply with a message built from the current message, and the name of
-        // the person we're meant to say hello to.
-        ctx.reply(s"$message, $name!")
+    }.onCommand[SetRadioLocationCommand, Done] {
+      case (SetRadioLocationCommand(location), context, state) =>
+        context.thenPersist(
+          SetRadioLocationEvent(location)
+        ) { _ =>
+          context.reply(Done)
+        }
+    }.onCommand[RemoveRadioProfileCommand, Done] {
+      case (RemoveRadioProfileCommand(alias), context, state) =>
+        context.thenPersist(
+          RemovedRadioProfileEvent(alias)
+        ) { _ =>
+          context.reply(Done)
+        }
+    }.onReadOnlyCommand[GetRadioLocationCommand.type, String] {
+      case (GetRadioLocationCommand, context, state) => context.reply(state.locations(0))
 
     }.onEvent {
-
-      // Event handler for the GreetingMessageChanged event
-      case (GreetingMessageChanged(newMessage), state) =>
-        // We simply update the current state to use the greeting message from
-        // the event.
-        HelloradioState(newMessage, LocalDateTime.now().toString)
+      case (AddedRadioProfileEvent(alias,location), state) =>
+        HelloradioState(alias , location:: state.locations)
+      case (SetRadioLocationEvent(location), state) =>
+        HelloradioState(state.alias , location:: state.locations)
+      case (RemovedRadioProfileEvent(alias_query), state) if state.alias == alias_query =>
+        HelloradioState("",List.empty)
 
     }
   }
 }
 
+
 /**
   * The current state held by the persistent entity.
   */
-case class HelloradioState(message: String, timestamp: String)
+case class HelloradioState(alias: String , locations: List[String])
 
 object HelloradioState {
   /**
@@ -96,6 +101,7 @@ object HelloradioState {
   implicit val format: Format[HelloradioState] = Json.format
 }
 
+
 /**
   * This interface defines all the events that the HelloradioEntity supports.
   */
@@ -107,16 +113,19 @@ object HelloradioEvent {
   val Tag = AggregateEventTag[HelloradioEvent]
 }
 
+case class AddedRadioProfileEvent(alias: String,location: String) extends HelloradioEvent
+case class SetRadioLocationEvent(location: String) extends HelloradioEvent
+case class RemovedRadioProfileEvent(alias_query: String) extends HelloradioEvent
 
 /**
   * This interface defines all the commands that the HelloradioEntity supports.
   */
 sealed trait HelloradioCommand[R] extends ReplyType[R]
 
-final case class AddRadioCommand(product: String) extends HelloradioCommand[Done]
-
-
-
+final case class AddRadioProfileCommand(alias: String,location: String) extends HelloradioCommand[Done]
+case class RemoveRadioProfileCommand(alias: String) extends HelloradioCommand[Done]
+case class SetRadioLocationCommand(location: String) extends HelloradioCommand[Done]
+case object GetRadioLocationCommand extends HelloradioCommand[String]
 
 
 /**
