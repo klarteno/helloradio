@@ -1,0 +1,35 @@
+syntax = "proto3";
+package ngcp.interview;
+
+// Creating of radio profiles
+message CreateRadioProfileRequest {
+  uint64 id = 1;
+  string alias = 2;
+  repeated string allowed_locations = 3;
+}
+
+message CreateRadioProfileResponse {}
+
+// Deletion of radio profiles
+message DeleteRadioProfileRequest { uint64 id = 1; }
+
+message DeleteRadioProfileResponse {}
+
+// Setting of radio location
+message SetRadioLocationRequest {
+  uint64 radio_id = 1;
+  string location = 2;
+}
+
+message SetRadioLocationResponse { bool success = 1; }
+
+// Getting of radio location
+message GetRadioLocationRequest { uint64 radio_id = 2; }
+
+message GetRadioLocationResponse {
+  message RadioNotFound {}
+  oneof result {
+    string location = 1;
+    RadioNotFound radio_not_found = 2;
+  }
+}
