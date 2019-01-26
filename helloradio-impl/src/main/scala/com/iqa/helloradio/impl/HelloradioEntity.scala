@@ -1,4 +1,4 @@
-package com.iqa.helloradio.impl
+package ngcp.com.iqa.helloradio.impl
 
 import java.time.LocalDateTime
 

@@ -1,4 +1,4 @@
-organization in ThisBuild := "com.iqa"
+organization in ThisBuild := "ngcp.com.iqa"
 version in ThisBuild := "1.0-SNAPSHOT"
 
 

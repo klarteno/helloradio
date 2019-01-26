@@ -1,4 +1,4 @@
-package com.iqa.helloradio.api
+package ngcp.com.iqa.helloradio.api
 
 import akka.{Done, NotUsed}
 import play.api.libs.json.{Format, Json}

@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d1eb0c-46ef-4404-8516-5af615eb3434" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/helloradio-impl/src/main/protobuf/interview.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/scalapb.sbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/protobuf/interview.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/helloradio_6586.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/helloradio_6586.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloradio-api/src/main/scala/com/iqa/helloradio/api/HelloradioService.scala" beforeDir="false" afterPath="$PROJECT_DIR$/helloradio-api/src/main/scala/com/iqa/helloradio/api/HelloradioService.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioEntity.scala" beforeDir="false" afterPath="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioEntity.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioLoader.scala" beforeDir="false" afterPath="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioLoader.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioServiceImpl.scala" beforeDir="false" afterPath="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioServiceImpl.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -25,11 +26,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/helloradio-api/src/main/scala/com/iqa/helloradio/api/HelloradioService.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+            <state relative-caret-position="38">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="e#37#64#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,67 +41,66 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioServiceImpl.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="281">
+              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
               <folding>
-                <element signature="e#33#60#0" expanded="true" />
+                <element signature="e#38#65#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="380">
-                <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/sbt.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/build.properties">
+        <entry file="file://$PROJECT_DIR$/.idea/scala_compiler.xml">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioEntity.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="38">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
-                <element signature="e#33#63#0" expanded="true" />
+                <element signature="e#38#68#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.sbt">
+        <entry file="file://$PROJECT_DIR$/.idea/scala_settings.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.sbtopts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="76">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/scalapb.sbt">
+        <entry file="file://$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioLoader.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="152">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -121,29 +124,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/helloradio-api/src/main/scala/com/iqa/helloradio/api/HelloradioService.scala" />
-        <option value="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioEntity.scala" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/project/plugins.sbt" />
-        <option value="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioServiceImpl.scala" />
-        <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioEntity.scala" />
+        <option value="$PROJECT_DIR$/helloradio-api/src/main/scala/com/iqa/helloradio/api/HelloradioService.scala" />
+        <option value="$PROJECT_DIR$/build.sbt" />
+        <option value="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioLoader.scala" />
+        <option value="$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioServiceImpl.scala" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="1451" />
-    <option name="y" value="-12" />
-    <option name="width" value="2359" />
-    <option name="height" value="2076" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1920" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,71 +318,17 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="protobuf" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="helloradio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="helloradio" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="helloradio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="helloradio" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="scala-2.12" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="helloradio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="helloradio" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="scala-2.12" type="462c0819:PsiDirectoryNode" />
-              <item name="src_managed" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="helloradio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="helloradio" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="scala-2.12" type="462c0819:PsiDirectoryNode" />
-              <item name="src_managed" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="helloradio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="helloradio" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="scala-2.12" type="462c0819:PsiDirectoryNode" />
-              <item name="src_managed" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="ngcp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="helloradio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="helloradio" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="scala-2.12" type="462c0819:PsiDirectoryNode" />
-              <item name="src_managed" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="ngcp" type="462c0819:PsiDirectoryNode" />
-              <item name="interview" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="helloradio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="helloradio" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="scala-2.12" type="462c0819:PsiDirectoryNode" />
-              <item name="src_managed" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="ngcp" type="462c0819:PsiDirectoryNode" />
-              <item name="interview" type="462c0819:PsiDirectoryNode" />
-              <item name="interview" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ScalaPB/examples/custom_options" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="sbt.project.settings.configurable" />
   </component>
   <component name="RunDashboard">
@@ -424,7 +370,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6193178850000" />
+        <entry key="$PROJECT_DIR$" value="6194022388000" />
         <entry key="$PROJECT_DIR$/build.sbt" value="3467993574" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="3771982881" />
         <entry key="$PROJECT_DIR$/project/plugins.sbt" value="2344070371" />
@@ -436,8 +382,8 @@
         <entry key="$PROJECT_DIR$/../../SBtprojectToDel/hello-world-sbt" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../SBtprojectToDel/scalatesttutorial" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../Scala-Reactive-Programming/Chapter09/lagom-wf-reactive-system" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
         <entry key="$PROJECT_DIR$/../../lagom-scala-sbt" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
         <entry key="$PROJECT_DIR$/../../udemy-akka-app-microservices/section6/multi-node-testing" value="PREVIEW" />
       </map>
     </option>
@@ -463,17 +409,18 @@
       <workItem from="1548290667544" duration="2832000" />
       <workItem from="1548310068695" duration="9460000" />
       <workItem from="1548321220125" duration="298000" />
+      <workItem from="1548505657722" duration="762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39961000" />
+    <option name="totallyTimeSpent" value="40723000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1451" y="-12" width="2359" height="2076" extended-state="4" />
+    <frame x="0" y="0" width="1920" height="1032" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30030823" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3036286" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
@@ -486,11 +433,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" weight="0.32944444" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.09777778" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" weight="0.32924107" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.09709822" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Build" order="12" visible="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32924107" />
+      <window_info anchor="bottom" id="Build" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -528,67 +475,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.sbtopts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helloradio-api/src/main/scala/com/iqa/helloradio/api/HelloradioService.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioServiceImpl.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#33#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/build.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioEntity.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#33#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/scalapb.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/helloradio-impl/src/main/resources/application.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="988">
@@ -599,10 +485,116 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="380">
-            <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <first_editor relative-caret-position="190">
+            <caret line="10" selection-start-line="10" selection-end-line="10" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/protobuf/interview.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-201">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/build.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/scalapb.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/sbt.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/scala_compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/scala_settings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.sbtopts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioServiceImpl.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding>
+            <element signature="e#38#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioLoader.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helloradio-impl/src/main/scala/com/iqa/helloradio/impl/HelloradioEntity.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#38#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helloradio-api/src/main/scala/com/iqa/helloradio/api/HelloradioService.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#37#64#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

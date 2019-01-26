@@ -1,4 +1,4 @@
-package com.iqa.helloradio.impl
+package ngcp.com.iqa.helloradio.impl
 
 import com.lightbend.lagom.scaladsl.api.ServiceLocator
 import com.lightbend.lagom.scaladsl.api.ServiceLocator.NoServiceLocator
@@ -6,7 +6,7 @@ import com.lightbend.lagom.scaladsl.persistence.cassandra.CassandraPersistenceCo
 import com.lightbend.lagom.scaladsl.server._
 import com.lightbend.lagom.scaladsl.devmode.LagomDevModeComponents
 import play.api.libs.ws.ahc.AhcWSComponents
-import com.iqa.helloradio.api.HelloradioService
+import ngcp.com.iqa.helloradio.api.HelloradioService
 import com.lightbend.lagom.scaladsl.broker.kafka.LagomKafkaComponents
 import com.softwaremill.macwire._
 
