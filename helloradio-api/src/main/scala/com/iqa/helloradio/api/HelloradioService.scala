@@ -7,6 +7,7 @@ import com.lightbend.lagom.scaladsl.api.broker.Topic
 import com.lightbend.lagom.scaladsl.api.broker.kafka.{KafkaProperties, PartitionKeyStrategy}
 import com.lightbend.lagom.scaladsl.api.{Service, ServiceCall}
 
+import ngcp.interview.interview.CreateRadioProfileRequest
 
 /**
   * The HelloRadio service interface.
@@ -24,7 +25,7 @@ trait HelloradioService extends Service {
 
   override final def descriptor = {
     import Service._
-
+  val tyu =  ngcp.interview.interview.CreateRadioProfileRequest(id=13,"gdfg",Seq("gsdg"))
     // @formatter:off
     named("helloradio")
       .withCalls(
