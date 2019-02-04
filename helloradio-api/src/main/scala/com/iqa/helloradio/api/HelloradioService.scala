@@ -1,13 +1,20 @@
-package ngcp.com.iqa.helloradio.api
+package com.iqa.helloradio.api
 
 import akka.{Done, NotUsed}
 import play.api.libs.json.{Format, Json}
 import com.lightbend.lagom.scaladsl.api.transport.Method
 import com.lightbend.lagom.scaladsl.api.broker.Topic
-import com.lightbend.lagom.scaladsl.api.broker.kafka.{KafkaProperties, PartitionKeyStrategy}
+import com.lightbend.lagom.scaladsl.api.broker.kafka.{
+  KafkaProperties,
+  PartitionKeyStrategy
+}
 import com.lightbend.lagom.scaladsl.api.{Service, ServiceCall}
+import com.lightbend.lagom.scaladsl.api.transport.MessageProtocol
+import com.lightbend.lagom.scaladsl.api.deser.MessageSerializer
 
-import ngcp.interview.interview.CreateRadioProfileRequest
+import com.iqa.helloradio.api.serializers._
+
+import ngcp.interview.interview._
 
 /**
   * The HelloRadio service interface.
@@ -16,42 +23,32 @@ import ngcp.interview.interview.CreateRadioProfileRequest
   * consume the HelloradioService.
   */
 trait HelloradioService extends Service {
-
-  def createRadioProfileRequest(radioId: Long): ServiceCall[AddRadioProfileRequest, Done]
-  def deleteRadioProfileRequest(radio_id: Long): ServiceCall[RemoveRadioProfileRequest, Done]
-  def setRadioLocationRequest(radio_id:Long): ServiceCall[SetRadioLocationRequest, Done]
-  def getRadioLocationRequest(radio_id:Long): ServiceCall[NotUsed, String]
-
+  def createRadioProfileRequest(): ServiceCall[CreateRadioProfileRequest, Done]
+  def deleteRadioProfileRequest(
+      ): ServiceCall[DeleteRadioProfileRequest, Done]
+  def setRadioLocationRequest(
+      radio_id: Long,
+      location: String
+  ): ServiceCall[NotUsed, SetRadioLocationResponse]
+  def getRadioLocationRequest()
+      : ServiceCall[GetRadioLocationRequest, GetRadioLocationResponse]
 
   override final def descriptor = {
     import Service._
-  val tyu =  ngcp.interview.interview.CreateRadioProfileRequest(id=13,"gdfg",Seq("gsdg"))
+
     // @formatter:off
     named("helloradio")
       .withCalls(
-        restCall(Method.POST, "/api/add-radio/:radioId/", createRadioProfileRequest _),
-        restCall(Method.POST, "/api/radio/:id", deleteRadioProfileRequest _),
-        restCall(Method.PUT, "/api/radio/:id/", setRadioLocationRequest _),
-        restCall(Method.GET, "/api/radio/:id", getRadioLocationRequest _)
+        restCall(Method.POST, "/api/add-radio", createRadioProfileRequest _)(new CreateRadioProfileReqSerializer(),MessageSerializer.DoneMessageSerializer),
+        //restCall(Method.POST, "/api/add-radio/:radioId/", createRadioProfileRequest _),
+        restCall(Method.POST, "/api/radio/", deleteRadioProfileRequest _)(new DeleteRadioProfileReqSerializer(),MessageSerializer.DoneMessageSerializer),
+        //restCall(Method.PUT, "/api/radio/:id/", setRadioLocationRequest _),
+        pathCall("/api/radio/:id/:location", setRadioLocationRequest _)(MessageSerializer.NotUsedMessageSerializer,new SetRadioLocationResponseSerializer()),
+
+        //restCall(Method.GET, "/api/radio/:id", getRadioLocationRequest _)(MessageSerializer.NotUsedMessageSerializer,new GetRadioLocationResponseSerializer())
+        pathCall("/api/get-radio", getRadioLocationRequest _)(new GetRadioLocationRequestSerializer(),new GetRadioLocationResponseSerializer())
     )
       .withAutoAcl(true)
     // @formatter:on
   }
-}
-
-
-case class AddRadioProfileRequest(alias: String,location: String)
-object AddRadioProfileRequest {
-  implicit val format: Format[AddRadioProfileRequest] =
-    Json.format[AddRadioProfileRequest]
-}
-
-case class RemoveRadioProfileRequest(alias: String)
-object RemoveRadioProfileRequest {
-  implicit val format: Format[RemoveRadioProfileRequest] = Json.format[RemoveRadioProfileRequest]
-}
-
-case class SetRadioLocationRequest(location: String)
-object SetRadioLocationRequest {
-  implicit val format: Format[SetRadioLocationRequest] = Json.format[SetRadioLocationRequest]
 }

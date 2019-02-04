@@ -1,48 +1,69 @@
-package ngcp.com.iqa.helloradio.impl
+package com.iqa.helloradio.impl
 
 import akka.{Done, NotUsed}
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext
 
-import ngcp.com.iqa.helloradio.api
-import ngcp.com.iqa.helloradio.api.HelloradioService
-import ngcp.com.iqa.helloradio.api.AddRadioProfileRequest
-import ngcp.com.iqa.helloradio.api.SetRadioLocationRequest
-import ngcp.com.iqa.helloradio.api.RemoveRadioProfileRequest
 import com.lightbend.lagom.scaladsl.api.ServiceCall
 import com.lightbend.lagom.scaladsl.api.broker.Topic
 import com.lightbend.lagom.scaladsl.broker.TopicProducer
-import com.lightbend.lagom.scaladsl.persistence.{EventStreamElement, PersistentEntityRegistry}
+import com.lightbend.lagom.scaladsl.persistence.{
+  EventStreamElement,
+  PersistentEntityRegistry
+}
+
+import ngcp.interview.interview._
+import com.iqa.helloradio.api
+import com.iqa.helloradio.api.HelloradioService
 
 /**
   * Implementation of the HelloradioService.
   */
-class HelloradioServiceImpl(persistentEntityRegistry: PersistentEntityRegistry) extends HelloradioService {
+class HelloradioServiceImpl(persistentEntityRegistry: PersistentEntityRegistry)(
+    implicit ec: ExecutionContext
+) extends HelloradioService {
 
-  override def createRadioProfileRequest(radioId: Long): ServiceCall[AddRadioProfileRequest, Done] = ServiceCall { request:AddRadioProfileRequest =>
-    val ref = persistentEntityRegistry.refFor[HelloradioEntity](radioId.toString)
-
-    ref.ask(AddRadioProfileCommand(request.alias,request.location))}
-
-
-  override def deleteRadioProfileRequest(radio_id: Long): ServiceCall[RemoveRadioProfileRequest, Done] = ServiceCall { request:RemoveRadioProfileRequest =>
-    val ref = persistentEntityRegistry.refFor[HelloradioEntity](radio_id.toString)
-
-    ref.ask(RemoveRadioProfileCommand(request.alias))
+  override def createRadioProfileRequest()
+      : ServiceCall[CreateRadioProfileRequest, Done] = ServiceCall {
+    request: CreateRadioProfileRequest =>
+      val ref =
+        persistentEntityRegistry.refFor[HelloradioEntity](request.id.toString)
+      ref.ask(
+        AddRadioProfileCommand(
+          request.id,
+          request.alias,
+          RadioLocations(request.allowedLocations.toList)
+        )
+      )
   }
 
-
-  override def setRadioLocationRequest(radio_id:Long): ServiceCall[SetRadioLocationRequest, Done] = ServiceCall { request:SetRadioLocationRequest =>
-    val ref = persistentEntityRegistry.refFor[HelloradioEntity](radio_id.toString)
-
-    ref.ask(SetRadioLocationCommand(request.location))
+  override def deleteRadioProfileRequest(
+      ): ServiceCall[DeleteRadioProfileRequest, Done] = ServiceCall {
+    request: DeleteRadioProfileRequest =>
+      val ref =
+        persistentEntityRegistry.refFor[HelloradioEntity](
+          request.id.toString
+        )
+      ref.ask(RemoveRadioProfileCommand())
   }
 
-
-  override  def getRadioLocationRequest(radio_id:Long): ServiceCall[NotUsed, String] = ServiceCall { _ =>
-    val ref = persistentEntityRegistry.refFor[HelloradioEntity](radio_id.toString)
-
-    ref.ask(GetRadioLocationCommand)
+  override def setRadioLocationRequest(
+      radio_id: Long,
+      location: String
+  ): ServiceCall[NotUsed, SetRadioLocationResponse] = ServiceCall { _ =>
+    val ref =
+      persistentEntityRegistry.refFor[HelloradioEntity](radio_id.toString)
+    ref.ask(SetRadioLocationCommand(location))
   }
 
+  override def getRadioLocationRequest()
+      : ServiceCall[GetRadioLocationRequest, GetRadioLocationResponse] =
+    ServiceCall { request: GetRadioLocationRequest =>
+      val ref =
+        persistentEntityRegistry.refFor[HelloradioEntity](
+          request.radioId.toString
+        )
+      ref.ask(GetRadioLocationCommand())
+    }
 
 }
-
