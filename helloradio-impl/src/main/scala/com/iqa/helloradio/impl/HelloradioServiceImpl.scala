@@ -15,6 +15,7 @@ import com.lightbend.lagom.scaladsl.persistence.{
 import ngcp.interview.interview._
 import com.iqa.helloradio.api
 import com.iqa.helloradio.api.HelloradioService
+import com.iqa.helloradio.api.models._
 
 /**
   * Implementation of the HelloradioService.
@@ -66,4 +67,28 @@ class HelloradioServiceImpl(persistentEntityRegistry: PersistentEntityRegistry)(
       ref.ask(GetRadioLocationCommand())
     }
 
+  override def radioprofilesTopic(): Topic[RadioProfileMessage] = {
+    TopicProducer.singleStreamWithOffset { offset =>
+      persistentEntityRegistry
+        .eventStream(HelloradioEvent.Tag, offset)
+        .map(ev => (convertEvent(ev), offset))
+    }
+  }
+
+  private def convertEvent(
+      messageEvent: EventStreamElement[HelloradioEvent]
+  ): RadioProfileMessage = {
+    messageEvent.event match {
+      case AddedRadioProfileEvent(
+          radio_id,
+          radio_alias,
+          locations
+          ) =>
+        RadioProfileMessage(
+          Some(radio_id),
+          Some(radio_alias),
+          Some(Locations(locations.allowedLocations))
+        )
+    }
+  }
 }

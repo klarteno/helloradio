@@ -24,17 +24,19 @@ class HelloradioLoader extends LagomApplicationLoader {
 }
 
 abstract class HelloradioApplication(context: LagomApplicationContext)
-  extends LagomApplication(context)
+    extends LagomApplication(context)
     with CassandraPersistenceComponents
     with LagomKafkaComponents
     with AhcWSComponents {
 
   // Bind the service that this server provides
-  override lazy val lagomServer = serverFor[HelloradioService](wire[HelloradioServiceImpl])
+  override lazy val lagomServer =
+    serverFor[HelloradioService](wire[HelloradioServiceImpl])
 
   // Register the JSON serializer registry
   override lazy val jsonSerializerRegistry = HelloradioSerializerRegistry
 
   // Register the HelloRadio persistent entity
   persistentEntityRegistry.register(wire[HelloradioEntity])
+
 }

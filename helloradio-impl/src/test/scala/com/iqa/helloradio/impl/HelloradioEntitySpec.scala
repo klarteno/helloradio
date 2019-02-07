@@ -34,6 +34,7 @@ class HelloradioEntitySpec
       "helloradio-1"
     )
     block(driver)
+    // driver.getAllIssues should have size 0
   }
 
   "HelloRadio entity" should {
@@ -49,6 +50,7 @@ class HelloradioEntitySpec
         )
       )
 
+      //outcome.replies should contain only "Hello, Alice!"
       println("outcome.replies")
       println(outcome.replies)
       println(manOf(outcome.replies))
@@ -90,6 +92,9 @@ class HelloradioEntitySpec
         )
       )
 
+      //outcome.events should ===(List(AddedRadioProfileEvent(12,"first_radio_alias", RadioLocations(List("1_location","2_location","3_location","4_location")))),
+      //                          AddRadioProfileCommand(34,"second_radio_alias",RadioLocations(List("5_location","6_location","7_location","8_location"))))
+
       outcome.events should ===(
         List(
           AddedRadioProfileEvent(
@@ -105,7 +110,30 @@ class HelloradioEntitySpec
       outcome.state.radio_id should ===(Some(12))
 
       outcome.replies should ===(List(akka.Done))
+    /*
+      val outcome = driver.run(ChangeBody("New body 1"), ChangeBody("New body 2"))
+      outcome.events should ===(List(
+        BodyChanged("post-1", "New body 1"),
+        BodyChanged("post-1", "New body 2")))
+      outcome.state.published should ===(false)
+      outcome.state.content.get.body should ===("New body 2")
+      outcome.replies should ===(List(Done, Done))
 
+     */
+
+    //outcome.replies should contain only "Hello, Alice!"
+
+    //"answer" should ===("answeryyyy")
+    //succeed
     }
+
+    /*
+    "allow updating the greeting message" in withTestDriver { driver =>
+      val outcome1 = driver.run(UseGreetingMessage("Hi"))
+      outcome1.events should contain only GreetingMessageChanged("Hi")
+      val outcome2 = driver.run(Hello("Alice"))
+      outcome2.replies should contain only "Hi, Alice!"
+    }
+   */
   }
 }

@@ -12,3 +12,7 @@ sbt test
 sbt clean <br/>
 sbt cleanFiles <br/>
 sbt cleanKeepFiles <br/>
+
+curl -d '{"id":1000,"alias":"fghfghfgh","allowedLocations":["lisabona"]' -H "Content-Type: application/json" -X POST http://localhost:9000/toLowercase
+
+curl -d '{"id":1000,"alias":"fghfghfgh","allowedLocations":["lisabona"]}' -H "Content-Type: "application/octet-stream"" -X POST http://localhost:9000/toLowercase

@@ -26,7 +26,7 @@ class HelloradioServiceSpec
   }
   private val server = ServiceTest.startServer(
     ServiceTest.defaultSetup
-      .withCassandra()
+      .withCassandra(true)
   ) { ctx =>
     new HelloradioApplication(ctx) with LocalServiceLocator
   }
@@ -37,6 +37,10 @@ class HelloradioServiceSpec
   override protected def afterAll() = server.stop()
 
   "HelloRadio service" should {
+
+    //Method.POST, "/api/add-radio/:radioId/", createRadioProfileRequest
+//radio_id, radio_alias, allowedLocations
+
     "reply with done when creating a radio profile request" in {
 
       var radioProfile = CreateRadioProfileRequest(
@@ -49,14 +53,56 @@ class HelloradioServiceSpec
           "fourth_location"
         )
       )
+      /*
+      paramInfo(
+        client
+          .createRadioProfileRequest()
+          .invoke(
+            radioProfile
+          )
+      )
+       */
       client
         .createRadioProfileRequest()
         .invoke(
           radioProfile
         )
         .map { answer =>
+          //println("type of answer") // println has result type Unit
+
+          //println(manOf(answer))
+
+          //println(answer)
+
           answer should ===(akka.Done)
+
         }
+      //outcome.events should ===(List(AddedRadioProfileEvent(12,"first_radio_alias", RadioLocations(List("1_location","2_location","3_location","4_location")))),
+      //                          AddRadioProfileCommand(34,"second_radio_alias",RadioLocations(List("5_location","6_location","7_location","8_location"))))
+      /*
+      client
+        .createRadioProfileRequest()
+        .invoke(
+          CreateRadioProfileRequest(
+            34,
+            "second_radio_alias",
+            List("5_location", "6_location", "7_location", "8_location")
+          )
+        )
+        .map { answer =>
+          //println("type of answer") // println has result type Unit
+
+          //println(manOf(answer))
+
+          //println(answer)
+
+          answer should ===(akka.Done)
+
+          //succeed
+
+        }
+     */
+
     }
 
     "getting the correct radio profile" in {
@@ -64,6 +110,17 @@ class HelloradioServiceSpec
         .getRadioLocationRequest()
         .invoke(GetRadioLocationRequest(12))
         .map { answer =>
+          //println("type of answer") // println has result type Unit
+
+          //println(manOf(answer))
+          /* info(
+            "type of answer type of answer type of answer type of answer type of answer type of answer"
+          )
+
+          println(answer)
+          println(manOf(answer))
+          paramInfo(answer)
+           */
           answer should not be (null)
 
           answer should ===(
@@ -71,7 +128,83 @@ class HelloradioServiceSpec
               "one_location"
             )
           )
+        } /*
+
+      client
+        .setRadioLocationRequest(12, "new_mars_location")
+        .invoke()
+        .map { answer =>
+          //println("type of answer") // println has result type Unit
+
+          //println(manOf(answer))
+           info(
+            "type of answer type of answer type of answer type of answer type of answer type of answer"
+          )
+
+          println(answer)
+          println(manOf(answer))
+          paramInfo(answer)
+
+          paramInfo(answer)
+          answer should not be (null)
+
+          answer should ===(
+            SetRadioLocationResponse(
+              true
+            )
+          )
         }
-    }
+     */
+    } /*
+
+    "delete radio profile" in {
+
+      client
+        .createRadioProfileRequest()
+        .invoke(
+          CreateRadioProfileRequest(
+            34,
+            "second_radio_alias",
+            List("5_location", "6_location", "7_location", "8_location")
+          )
+        )
+        .map { answer =>
+          //println("type of answer") // println has result type Unit
+
+          //println(manOf(answer))
+
+          //println(answer)
+
+          answer should ===(akka.Done)
+
+          //succeed
+
+        }
+
+      client
+        .deleteRadioProfileRequest()
+        .invoke(DeleteRadioProfileRequest(34))
+        .map { answer =>
+          //println("type of answer") // println has result type Unit
+
+          //println(manOf(answer))
+          info(
+            "type of answer type of answer type of answer type of answer type of answer type of answer"
+          )
+
+          println(answer)
+          println(manOf(answer))
+          paramInfo(answer)
+
+          answer should not be (null)
+
+          answer should ===(akka.Done)
+
+          // "asd" shouldBe "asd"
+
+          // succeed
+        }
+
+    }*/
   }
 }

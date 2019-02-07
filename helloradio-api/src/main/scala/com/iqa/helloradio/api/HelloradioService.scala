@@ -13,6 +13,7 @@ import com.lightbend.lagom.scaladsl.api.transport.MessageProtocol
 import com.lightbend.lagom.scaladsl.api.deser.MessageSerializer
 
 import com.iqa.helloradio.api.serializers._
+import com.iqa.helloradio.api.models._
 
 import ngcp.interview.interview._
 
@@ -47,8 +48,15 @@ trait HelloradioService extends Service {
 
         //restCall(Method.GET, "/api/radio/:id", getRadioLocationRequest _)(MessageSerializer.NotUsedMessageSerializer,new GetRadioLocationResponseSerializer())
         pathCall("/api/get-radio", getRadioLocationRequest _)(new GetRadioLocationRequestSerializer(),new GetRadioLocationResponseSerializer())
+    ).withTopics(
+      topic(HelloradioService.TOPIC_NAME, radioprofilesTopic)
     )
       .withAutoAcl(true)
     // @formatter:on
   }
+  def radioprofilesTopic(): Topic[RadioProfileMessage]
+}
+
+object HelloradioService {
+  val TOPIC_NAME = "RadioProfiles"
 }
