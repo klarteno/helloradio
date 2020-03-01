@@ -3,11 +3,11 @@ version in ThisBuild := "1.0-SNAPSHOT"
 
 import scalapb.compiler.Version.scalapbVersion
 
-scalaVersion in ThisBuild := "2.12.8"
+scalaVersion in ThisBuild := "2.12.10"
 
 val macwire = "com.softwaremill.macwire" %% "macros" % "2.3.0" % "provided"
-val scalaTest = "org.scalatest" %% "scalatest" % "3.0.5" % Test
-val scalactic = "org.scalactic" %% "scalactic" % "3.0.5" % Test
+val scalaTest = "org.scalatest" %% "scalatest" % "3.1.1" % Test
+val scalactic = "org.scalactic" %% "scalactic" % "3.1.1" % Test
 
 lazy val `helloradio` = (project in file("."))
   .aggregate(`helloradio-api`, `helloradio-impl`)

@@ -3,7 +3,6 @@ target
 ideatarget
 .target
 bin
-.cache
 .cache-main
 .cache-tests
 .classpath
@@ -13,9 +12,28 @@ bin
 .settings
 logs
 
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+
 
 *.class
 *.log
 
 *.iml
 .idea
+
+boot/
+
+.bloop/
+.metals/
+metals.sbt
+project/metals.sbt

@@ -1,6 +1,6 @@
 #FileLock
-#Thu Feb 07 04:22:42 CET 2019
-hostName=androgo-ubuntu
-id=168c5fa9c9c3175221fe1d97004efda89ca372f849e
+#Sun Mar 01 19:41:50 CET 2020
+server=localhost\:33014
+hostName=localhost
 method=file
-server=127.0.1.1\:40113
+id=17097678ab9f8a5377c767dea1eb09ccda2a088024d
